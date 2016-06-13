@@ -22,7 +22,7 @@ var rotation = 0;
 var distance = 0;
 
 var renderCount = 0;
-var renderStop = -1;
+var renderStop = -1;  //set to a positive number if want to stop after X number of renders
 
 
 // Point3D constructor
@@ -279,7 +279,10 @@ function render() {
         ctx.restore();
         ctx.fillStyle = "rgb(150,150,150)";
         ctx.fillText("G-Force control", width - 90, height - 5);
-        rotation += Math.PI / 90.0;
+        //rotation += Math.PI / 90.0;
+        //rotation += Math.PI / 180;
+
+        rotation += .009;
 
         if (distance < 1000) {
             distance += 20;
